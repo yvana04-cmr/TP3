@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 
@@ -14,6 +16,7 @@ class Produit{
         void setQuantite(int quantite);
         void setPrixUnit(double prixUnit);
 
+
     private:
         std::string _titre;
         std::string _description;
@@ -21,3 +24,5 @@ class Produit{
         double _prixUnit;
 
 };
+std::ostream& operator << (std::ostream& os, Produit& prod);
+bool operator == (Produit& p1, Produit& p2);

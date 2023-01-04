@@ -29,3 +29,29 @@
             _prixUnit = prixUnit;
         }
 
+std::ostream& operator << (std::ostream& os, Produit& prod){
+    os << prod.getTitre() << std::endl;
+    os << prod.getDescription() << std::endl;
+    os << prod.getPrixUnit() << std::endl;
+    os << prod.getQuantite() << std::endl;
+
+    return os;
+}
+
+bool operator == (Produit& p1, Produit& p2){
+    if ((p1.getTitre() == p2.getTitre()) &&
+     (p1.getDescription() == p2.getDescription()) &&
+      (p1.getPrixUnit() == p2.getPrixUnit()) && 
+      (p1.getQuantite() == p2.getQuantite())){
+        return true;
+      }
+      return false;
+}
+
+
+/*void Produit:: operator << (Produit& p){
+    std::cout << p.getTitre() << std::endl;
+    std::cout << p.getDescription() << std::endl;
+    std::cout << p.getPrixUnit() << std::endl;
+    std::cout << p.getQuantite() << std::endl;
+}*/
