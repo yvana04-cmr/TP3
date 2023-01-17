@@ -24,7 +24,7 @@ Client::Client(std::string prenom, std::string nom):
             _nom = nom;
         }
 
-    void Client:: remplissage(Produit p){
+    void Client:: remplissage(Produit& p){
         _panierAchat.push_back(p);
     }
 
@@ -32,16 +32,13 @@ Client::Client(std::string prenom, std::string nom):
         _panierAchat.clear();
     }
 
-   /* void Client:: modifier (Produit& p){
+    void Client:: modifier (Produit& p, int a){
         for (int i=0; i<_panierAchat.size(); i++){
             if(_panierAchat.at(i) == p){
-                int b;
-                std::cout << "Entrer un entier" << std::endl;
-                std::cin >> b;
-              int q = p.setQuantite(int b);   
+                _panierAchat.at(i).setQuantite(a);
              }
         }
-    }*/
+    }
 
     void Client:: supprimerProduit(Produit& p){
         for(int i=0; i<_panierAchat.size(); i++){
@@ -53,9 +50,14 @@ Client::Client(std::string prenom, std::string nom):
     }
 
     std::ostream& operator << (std::ostream& os, Client& c){
-        os << c.getId() << std::endl;
-        os << c.getNom() << std::endl;
-        os << c.getPrenom() << std::endl;
+        os << "Informations du client" << c.getNom() << " " << c.getPrenom() << std::endl;
+        for (auto i : c.getPanier()){
+            os << i.getTitre() << " " << i.getDescription() << " " << i.getQuantite() << " " << i.getPrixUnit() << std::endl;
+        }
 
         return os;
+    }
+
+    std::vector <Produit> Client::getPanier(){
+        return _panierAchat;
     }

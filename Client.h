@@ -15,10 +15,12 @@ class Client{
         void setNom(std::string nom);
         void setId(std::string id);
         
-        void remplissage(Produit p);
+        void remplissage(Produit& p);
         void viderPanier();
-        //void modifier (Produit& p);
+        void modifier (Produit& p, int a);
         void supprimerProduit(Produit& p);
+
+        std::vector <Produit> getPanier();
 
     private:
         std::string _prenom;
