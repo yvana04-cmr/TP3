@@ -12,7 +12,7 @@ Commande::Commande(Client client, bool status):
     }
 
 std::ostream& operator << (std::ostream& os, Commande& c){
-    os << c.getClient();
+    //os << c.getClient();
     os << c.getStatus();
     
     return os;

@@ -42,9 +42,8 @@ Client::Client(std::string prenom, std::string nom):
 
     void Client:: supprimerProduit(Produit& p){
         for(int i=0; i<_panierAchat.size(); i++){
-            if (_panierAchat.at(i) == p){
-                std::cout << "Entrer un entier" << std::endl;
-                _panierAchat.erase(_panierAchat.begin()+i);
+            if (_panierAchat[i] == p){
+                _panierAchat.erase(_panierAchat.begin() + i);
             }
         }
     }

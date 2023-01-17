@@ -3,8 +3,8 @@
 //#include "Date.h"
 
 int main (){
- Produit p ("Air Force1", "basket", 5, 150.00);
-Produit p1 ("iPhone X", "Télephone Apple 256Go", 1, 350.00);
+Produit p ("Air Force1", "basket", 5, 150.00);
+Produit p1 ("iPhone X", "Telephone Apple 256Go", 1, 350.00);
 Produit p2 ("Air Jordan", "basket", 2, 100.00);
 Produit p3 ("HP Pavillon", "ordinateur portable", 1, 500.00);
 
@@ -15,16 +15,17 @@ c1.remplissage(p2);
 c1.remplissage(p3);
 
 std::vector <Produit> vec = c1.getPanier();
-   for (auto i : vec){
-      std::cout << i;
-   }
+for (int i = 0; i < vec.size(); i++) {
+      std::cout << vec[i];
+}
 
 c1.supprimerProduit(p3);
-   for (auto i : vec){
-      std::cout << i;
-   }
+vec = c1.getPanier();
+for (int i = 0; i < vec.size(); i++) {
+    std::cout << vec[i];
+}
 
-std::cout << c1;
+//std::cout << c1;
 
 //Commande c(false);
 
