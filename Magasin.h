@@ -9,9 +9,14 @@
 class Magasin{
     public:
         Magasin();
-      void addProduit(Produit& p);
-       void affichage();
-       //void miseAJour();
+        std::vector <Produit> getProduits();
+        std::vector <Client> getClients();
+        std::vector <Commande> getCommande();
+
+       void addProduit(Produit& p, Client& c);
+       void afficheNomClient(std::string nom);
+       void addClient(Client& c);
+       void miseAJour(std::string nom, int n);
 
     private:
         std::vector <Produit> _produits;
@@ -19,6 +24,6 @@ class Magasin{
         std::vector <Commande> _commandes;
 };
 
-//mise à jour de la quantité d'un produit
-void afficheNom(Produit& p);
+
+
  

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Client.h"
+#include "Magasin.h"
 //#include "Date.h"
 
 int main (){
@@ -9,7 +9,10 @@ Produit p2 ("Air Jordan", "basket", 2, 100.00);
 Produit p3 ("HP Pavillon", "ordinateur portable", 1, 500.00);
 
 Client c1("TOUKO", "Yvana");
-c1.remplissage(p);
+Client c2("PELLA", "Yannis");
+Client c3("EMOU", "Carrelle");
+Client c4("EMME", "Chloe");
+/*c1.remplissage(p);
 c1.remplissage(p1);
 c1.remplissage(p2);
 c1.remplissage(p3);
@@ -24,23 +27,32 @@ c1.supprimerProduit(p3);
       std::cout << i;
    }
 
-std::cout << c1;
+std::cout << c1;*/
 
 //Commande c(false);
 
- /*std::cout << p;
-    Magasin m;
-    m.addProduit(p);
-    m.addProduit(p1);
-    m.addProduit(p2);
-    m.affichageProduit();*/
+ Magasin m;
+ m.addClient(c1);
+ m.addClient(c2);
+ m.addClient(c3);
+ m.addClient(c4);
+
+for (auto i : m.getClients()){
+   std::cout << i << std::endl;
+}
+
+m.afficheNomClient("TOUKO");
+m.addProduit(p1,c2);
+for(auto j : c2.getPanier()){
+   std::cout << j;
+}
 
 /*Date d1(4,5,2004);
-Date d6(5,5,2004);
 Date d2(31,12,2021);
 Date d3(1,1,2021);
 Date d4(25,6,2003);
 Date d5(25,7,2003);
+Date d6(5,5,2004);
 
 //d1.updateMonth(6);
 
