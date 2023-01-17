@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Magasin.h"
+#include "Client.h"
 //#include "Date.h"
 
 int main (){
@@ -8,12 +8,32 @@ Produit p1 ("iPhone X", "Télephone Apple 256Go", 1, 350.00);
 Produit p2 ("Air Jordan", "basket", 2, 100.00);
 Produit p3 ("HP Pavillon", "ordinateur portable", 1, 500.00);
 
- std::cout << p;
+Client c1("TOUKO", "Yvana");
+c1.remplissage(p);
+c1.remplissage(p1);
+c1.remplissage(p2);
+c1.remplissage(p3);
+
+std::vector <Produit> vec = c1.getPanier();
+   for (auto i : vec){
+      std::cout << i;
+   }
+
+c1.supprimerProduit(p3);
+   for (auto i : vec){
+      std::cout << i;
+   }
+
+std::cout << c1;
+
+//Commande c(false);
+
+ /*std::cout << p;
     Magasin m;
     m.addProduit(p);
     m.addProduit(p1);
     m.addProduit(p2);
-    m.affichageProduit();
+    m.affichageProduit();*/
 
 /*Date d1(4,5,2004);
 Date d6(5,5,2004);
