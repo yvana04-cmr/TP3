@@ -8,10 +8,10 @@ Produit p1 ("iPhone X", "Télephone Apple 256Go", 1, 350.00);
 Produit p2 ("Air Jordan", "basket", 2, 100.00);
 Produit p3 ("HP Pavillon", "ordinateur portable", 1, 500.00);
 
-Client c1("TOUKO", "Yvana");
-Client c2("PELLA", "Yannis");
-Client c3("EMOU", "Carrelle");
-Client c4("EMME", "Chloe");
+Client c1("Yvana", "TOUKO");
+Client c2("Yannis", "PELLA");
+Client c3("Carrelle", "EMOU");
+Client c4("Chloe", "EMME");
 /*c1.remplissage(p);
 c1.remplissage(p1);
 c1.remplissage(p2);

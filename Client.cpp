@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Client.h"
 
-Client::Client(std::string prenom, std::string nom):
-        _prenom(prenom), _nom(nom) {}
+Client::Client(std::string prenom, std::string nom, std::string id):
+        _prenom(prenom), _nom(nom), _id(id) {}
 
         std::string Client::getPrenom(){
             return _prenom;
@@ -42,15 +42,14 @@ Client::Client(std::string prenom, std::string nom):
 
     void Client:: supprimerProduit(Produit& p){
         for(int i=0; i<_panierAchat.size(); i++){
-            if (_panierAchat.at(i) == p){
-                std::cout << "Entrer un entier" << std::endl;
-                _panierAchat.erase(_panierAchat.begin()+i);
+            if (_panierAchat[i] == p){
+                _panierAchat.erase(_panierAchat.begin() + i);
             }
         }
     }
 
     std::ostream& operator << (std::ostream& os, Client& c){
-        os << "Informations du client" << c.getNom() << " " << c.getPrenom() << std::endl;
+        os << "Informations du client:\n" << c.getNom() << " " << c.getPrenom() << " " << c.getId() << std::endl;
         for (auto i : c.getPanier()){
             os << i.getTitre() << " " << i.getDescription() << " " << i.getQuantite() << " " << i.getPrixUnit() << std::endl;
         }

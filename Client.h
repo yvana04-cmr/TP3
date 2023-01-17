@@ -6,7 +6,7 @@
 
 class Client{
     public:
-        Client(std::string prenom, std::string nom);
+        Client(std::string prenom, std::string nom, std::string id);
         std::string getPrenom();
         std::string getNom();
         std::string getId();
