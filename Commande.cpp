@@ -1,6 +1,6 @@
 #include "Commande.h"
 
-Commande::Commande(Client& client bool status):
+Commande::Commande(Client& client, bool status):
    _client(client), _status(status) {}
 
     Client Commande::getClient(){

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Magasin.h"
+#include "Commande.h"
 //#include "Date.h"
 
 int main (){
@@ -8,10 +8,17 @@ Produit p1 ("iPhone X", "Télephone Apple 256Go", 1, 350.00);
 Produit p2 ("Air Jordan", "basket", 2, 100.00);
 Produit p3 ("HP Pavillon", "ordinateur portable", 1, 500.00);
 
-Client c1("Yvana", "TOUKO");
-Client c2("Yannis", "PELLA");
-Client c3("Carrelle", "EMOU");
-Client c4("Chloe", "EMME");
+Client c1("Yvana", "TOUKO", "124565");
+Client c2("Yannis", "PELLA", "46163616");
+Client c3("Carrelle", "EMOU", "64654");
+Client c4("Chloe", "EMME", "3984416");
+
+Commande c(c1, false);
+for(auto j : c1.getPanier()){
+   std::cout << j;
+}
+std::cout << c;
+
 /*c1.remplissage(p);
 c1.remplissage(p1);
 c1.remplissage(p2);
@@ -31,7 +38,7 @@ std::cout << c1;*/
 
 //Commande c(false);
 
- Magasin m;
+ /*Magasin m;
  m.addClient(c1);
  m.addClient(c2);
  m.addClient(c3);
@@ -45,7 +52,7 @@ m.afficheNomClient("TOUKO");
 m.addProduit(p1,c2);
 for(auto j : c2.getPanier()){
    std::cout << j;
-}
+}*/
 
 /*Date d1(4,5,2004);
 Date d2(31,12,2021);
