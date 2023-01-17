@@ -47,11 +47,3 @@ bool operator == (Produit& p1, Produit& p2){
       }
       return false;
 }
-
-
-/*void Produit:: operator << (Produit& p){
-    std::cout << p.getTitre() << std::endl;
-    std::cout << p.getDescription() << std::endl;
-    std::cout << p.getPrixUnit() << std::endl;
-    std::cout << p.getQuantite() << std::endl;
-}*/
